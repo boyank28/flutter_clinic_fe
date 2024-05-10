@@ -17,7 +17,7 @@ class AuthExternalDatasource implements AuthRepository {
   @override
   Future<Result<User>> login({required String email, required String password}) async {
     try {
-      String apiUrl = 'https://www.laravel-clinic-be.test/api/login';
+      String apiUrl = '$baseUrl/login';
       log(apiUrl);
 
       var response = await _dio.post(apiUrl,
